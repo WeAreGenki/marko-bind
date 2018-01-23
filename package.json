@@ -1,17 +1,33 @@
 {
   "name": "marko-bind",
   "version": "0.0.0",
-  "description": "placeholder",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WeAreGenki/marko-bind.git"
-  },
+  "description": "Marko custom attribute to bind an input to component state.",
+  "keywords": [
+    "marko",
+    "wearegenki"
+  ],
+  "repository": "https://github.com/WeAreGenki/marko-bind",
+  "homepage": "https://wearegenki.com/pro#OpenSource",
   "author": "Max Milton <max@wearegenki.com>",
   "license": "Apache-2.0",
-  "homepage": "https://wearegenki.com/pro#OpenSource",
-  "dependencies": {}
+  "main": "index.js",
+  "files": [
+    "helper.js"
+  ],
+  "scripts": {
+    "lint": "eslint --ext .js,.marko src test",
+    "pretest": "npm run lint",
+    "test": "exit 1"
+  },
+  "peerDependencies": {
+    "marko": "^4.7.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "lasso": "^3.1.2",
+    "lasso-marko": "^2.4.0",
+    "marko": "^4.7.5"
+  }
 }
