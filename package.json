@@ -1,6 +1,6 @@
 {
   "name": "marko-bind",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Marko custom attribute to bind an input to component state.",
   "keywords": [
     "marko",
@@ -12,12 +12,13 @@
   "license": "Apache-2.0",
   "main": "index.js",
   "files": [
-    "helper.js"
+    "runtime.js",
+    "runtime-dynamic.js"
   ],
   "scripts": {
     "lint": "eslint --ext .js,.marko src test",
     "pretest": "npm run lint",
-    "test": "exit 1"
+    "test": "echo 'Tests are still TODO.'; exit 1"
   },
   "peerDependencies": {
     "marko": "^4.7.5"
