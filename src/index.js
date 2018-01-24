@@ -3,6 +3,7 @@
 const runtimeModulePath = require.resolve('./runtime');
 const runtimeDynamicModulePath = require.resolve('./runtime-dynamic');
 
+const dynamicEls = [];
 let dynamicRuntimeLoaded = false;
 
 module.exports = function transform(el, context) {
@@ -18,26 +19,35 @@ module.exports = function transform(el, context) {
   let toExpression = builder.parseExpression(attribute.argument);
 
   if (toExpression.type === 'Literal') {
-    // TODO: Resolve nested state -- can use https://github.com/developit/dlv
+    // TODO: Resolve nested state
+    //  ↳ Check if marko already has something for this
+    //  ↳ Or we can use https://github.com/developit/dlv
 
     // if the attribute is a string then assume it's a child of the state object
     toExpression = builder.memberExpression('state', toExpression.value);
   } else if (toExpression.type !== 'MemberExpression') {
-    // dynamic attribute expression which needs to be handled at runtime
+    // dynamic attribute expression which must be handled at runtime
+
+    // console.log('@@ EL', el);
+    dynamicEls.push(el);
 
     // create an attribute we can parse at runtime
     el.setAttributeValue('__bind', builder.literal(toExpression.name));
 
-
     if (!dynamicRuntimeLoaded) {
-      // import the additional runtime
+      // import additional runtime module
       context.importModule('__bindDynamic', runtimeDynamicModulePath);
 
-      // call the dynamic runtime after all the nodes are in place
+      // call the runtime setup module after all the nodes are in place
       const astNodes = context.root.body.array;
       const lastNode = astNodes[astNodes.length - 1];
+      console.log('dynamicEls', dynamicEls);
       lastNode.appendChild(builder.node(() =>
-        builder.functionCall(builder.identifier('__bindDynamic'))));
+        builder.functionCall(builder.identifier('__bindDynamic'), [
+          builder.identifier('component'),
+          builder.arrayExpression(dynamicEls),
+        ]),
+      )); // eslint-disable-line function-paren-newline
 
       dynamicRuntimeLoaded = true;
     }

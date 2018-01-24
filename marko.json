@@ -2,7 +2,7 @@
   "tags": {
     "*": {
       "@bind": "custom",
-      "transformer": "./index"
+      "transformer": "./src/index"
     }
   }
 }
