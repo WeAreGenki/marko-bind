@@ -4,6 +4,9 @@
   "description": "Marko custom attribute to bind an input to component state.",
   "keywords": [
     "marko",
+    "markojs",
+    "javascrip-plugin",
+    "lasso",
     "wearegenki"
   ],
   "repository": "https://github.com/WeAreGenki/marko-bind",
