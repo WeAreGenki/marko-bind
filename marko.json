@@ -1,0 +1,9 @@
+{
+  "tags": {
+    "*": {
+      "@bind": "custom",
+      "renderer": "./index",
+      "transformer": "./transformer"
+    }
+  }
+}

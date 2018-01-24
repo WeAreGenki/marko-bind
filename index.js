@@ -1,36 +1,16 @@
-var resolvedHelperModulePath = require.resolve('./tag-body-helper');
+let setupDone = false;
 
-module.exports = function transform(el, context) {
-  var bodyExpressionAttr = el.getAttribute('tag-body');
-  if (bodyExpressionAttr != null) {
-    el.removeAttribute('tag-body');
+module.exports = function render(input, out) {
+  console.log('RENDER INPUT', input);
+  console.log('RENDER OUT', out);
 
-    var builder = context.builder;
+  if (!setupDone) {
+    // TODO: Do setup (?)
 
-    var bodyExpression = bodyExpressionAttr.value;
-    if (!bodyExpression) {
-      bodyExpression = builder.memberExpression(
-        builder.identifier('data'),
-        builder.identifier('renderBody')
-      );
-    }
+    console.log('DO SETUP');
 
-    el.appendChild(
-      builder.node(function(node, codegen) {
-        var builder = codegen.builder;
-        var helperModulePath = builder.literal(
-          codegen.getRequirePath(resolvedHelperModulePath)
-        );
-        var tagBodyHelperVar = codegen.context.addStaticVar(
-          '__tagBody',
-          builder.require(helperModulePath)
-        );
-
-        return builder.functionCall(tagBodyHelperVar, [
-          builder.identifier('out'),
-          bodyExpression,
-        ]);
-      })
-    );
+    setupDone = true;
   }
+
+  input.renderBody(out);
 };
