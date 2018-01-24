@@ -1,16 +1,24 @@
 # `marko-bind`
 
-[Marko](https://markojs.com) custom attribute to bind an input value and events to its component state.
+[Markojs](https://markojs.com) custom attribute to bind an input's value and events to a component state.
 
 ## Overview
 
-Since Marko doesn't come with anything out-of-the-box, this marko plugin provides an easy way to do so. For the discussion about the feature see [github.com/marko-js/marko/issues/676](https://github.com/marko-js/marko/issues/676).
+Simply use the `bind()` directive on any form input, select, or textarea element for quick and easy reactive data binding. You don't need to worry about any special or edge cases as it's all handled internally. No more need to repeatedly set up finicky custom event bindings, just focus on being productive!
+
+This package tries to do as much as possible during compile time resulting in little overhead via a very small runtime module.
+
+Since Marko doesn't come with anything out-of-the-box, this marko package provides an easy way to do so. For the discussion about the feature see [github.com/marko-js/marko/issues/676](https://github.com/marko-js/marko/issues/676).
+
+The tag handling logic was very much inspired by [Vue.js's `v-model` directive](https://github.com/vuejs/vue/blob/master/src/platforms/web/compiler/directives/model.js).
+
+_NOTE: The tag and edge case handling is currently a work in progress. Most input tags already work great out of the box though!_
 
 ## Usage
 
 ### Install
 
-You only need to add it to your project, Marko is smart enough to find it automatically when you use it in components.
+You only need to add it to your project, Marko is smart enough to find the tag automatically when you use it in components.
 
 ```shell
 npm install marko-bind
@@ -20,7 +28,7 @@ yarn add marko-bind
 
 ### Use in components
 
-Set the component state then use the `bind` directive as an attribute on your input element, e.g.:
+Set the component state then use the `bind` directive as an attribute on your input element. Example:
 
 ```marko
 class {
@@ -34,11 +42,29 @@ class {
 <input bind('uname') type="text" name="username"/>
 ```
 
-## Considerations
+For the attribute value you can use whatever makes sense to your application. String values will resolve automatically to your component state. You can also pass in the state object directly:
 
-This plugin works at runtime so there's an additional module included in your JS bundle. There are likely to be opportunities for compile-time optimisations.
+```marko
+<input bind(state.uname) type="text" name="username"/>
+```
 
-Currently, this plugin is only tested using lasso as the JS bundler although it's likely to work with any bundler (e.g. webpack or rollup).
+It's also possible to use a dynamic JavaScript expression or reference a component method. This can also return either a string or the state object. One caveat with this is because the attribute value is evaluated at runtime we need to include an additional runtime module to bind the input state and events. Example:
+
+```marko
+class {
+  onCreate() {
+    this.state = {
+      uname: '',
+    };
+  }
+
+  someMethod() {
+    return this.state.uname;
+  }
+}
+
+<input bind(someMethod) type="text" name="username"/>
+```
 
 ## Licence
 
