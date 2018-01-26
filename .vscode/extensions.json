@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "DavidAnson.vscode-markdownlint",
+    "pcanella.marko",
+    "esbenp.prettier-vscode",
+    "ban.spellright",
+    "wayou.vscode-todo-highlight"
+  ]
+}

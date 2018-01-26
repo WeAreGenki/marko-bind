@@ -1,0 +1,36 @@
+{
+  "javascript.implicitProjectConfig.checkJs": true,
+  "eslint.enable": true,
+  "eslint.validate": [
+    "html",
+    "javascript",
+    "marko"
+  ],
+  // recommended dictionary: https://github.com/MaxMilton/hunspell-dictionary
+  // "spellright.language": "en_AU",
+  "spellright.documentTypes": [
+    "html",
+    "javascript",
+    "json",
+    "markdown",
+    "marko",
+    "plaintext",
+    "text"
+  ],
+  "spellright.spellContext": "body code comments strings",
+  "todohighlight.keywords": [
+    {
+      "text": "XXX:", // for implementation details or notes
+      "color": "#ecf2fa",
+      "backgroundColor": "#3477ca"
+    },
+    "README:",
+    "NOTE:",
+    "REF:" // for references (e.g. a link to an article)
+  ],
+  "todohighlight.defaultStyle": {
+    "color": "unset",
+    "backgroundColor": "unset",
+    "overviewRulerColor": "grey"
+  }
+}
