@@ -1,6 +1,8 @@
 # `marko-bind`
 
-[Markojs](https://markojs.com) custom attribute to bind an input's value and events to a component state.
+An easy way to do reactive data binding in [MarkoJS](https://markojs.com).
+
+Provides a custom `bind()` directive which binds an input's value and events to a marko component state.
 
 ## Overview
 
@@ -12,7 +14,7 @@ Since Marko doesn't come with anything out-of-the-box, this marko package provid
 
 The tag handling logic was very much inspired by [Vue.js's `v-model` directive](https://github.com/vuejs/vue/blob/master/src/platforms/web/compiler/directives/model.js).
 
-_NOTE: The tag and edge case handling is currently a work in progress. Most input tags already work great out of the box though!_
+> NOTE: The tag and edge case handling is currently a work in progress. Most input tags already work great out of the box though!
 
 ## Usage
 
@@ -28,38 +30,42 @@ yarn add marko-bind
 
 ### Use in components
 
-Set the component state then use the `bind` directive as an attribute on your input element. Example:
+Set the component state then use the `bind()` directive as an attribute on your input element. Example:
 
 ```marko
 class {
   onCreate() {
     this.state = {
-      uname: '',
+      userName: '',
     };
   }
 }
 
-<input bind('uname') type="text" name="username"/>
+<input bind('userName') type="text" name="username"/>
 ```
 
 For the attribute value you can use whatever makes sense to your application. String values will resolve automatically to your component state. You can also pass in the state object directly:
 
 ```marko
-<input bind(state.uname) type="text" name="username"/>
+<input bind(state.userName) type="text" name="username"/>
 ```
 
-It's also possible to use a dynamic JavaScript expression or reference a component method. This can also return either a string or the state object. One caveat with this is because the attribute value is evaluated at runtime we need to include an additional runtime module to bind the input state and events. Example:
+It's also possible to use a dynamic JavaScript expression or reference a component method. This can also return either a string or the state object.
+
+> NOTE Because the attribute value is evaluated at runtime we need to include an additional runtime module to handle binding once we know the state.
+
+Example:
 
 ```marko
 class {
   onCreate() {
     this.state = {
-      uname: '',
+      userName: '',
     };
   }
 
   someMethod() {
-    return this.state.uname;
+    return this.state.userName;
   }
 }
 
