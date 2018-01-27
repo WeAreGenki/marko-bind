@@ -26,7 +26,7 @@
     "marko": "^4.7.5"
   },
   "devDependencies": {
-    "@wearegenki/eslint-config": "0.4.0-alpha.09cfe267",
+    "@wearegenki/eslint-config": "^0.4.0",
     "eslint": "^4.16.0",
     "lasso": "^3.1.2",
     "lasso-marko": "^2.4.0",

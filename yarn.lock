@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@wearegenki/eslint-config@0.4.0-alpha.09cfe267":
-  version "0.4.0-alpha.09cfe267"
-  resolved "https://registry.yarnpkg.com/@wearegenki/eslint-config/-/eslint-config-0.4.0-alpha.09cfe267.tgz#8b0a8cb583207943919d1b0ab47c8042cc239385"
+"@wearegenki/eslint-config@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@wearegenki/eslint-config/-/eslint-config-0.4.0.tgz#edf88110c4ea4385f35c496486293c7ea12698c9"
   dependencies:
     eslint-config-airbnb-base "^12.1.0"
     eslint-plugin-compat "^2.2.0"
@@ -201,8 +201,8 @@ camelcase@^1.0.2:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-1.2.1.tgz#9bb5304d2e0b56698b2c758b08a3eaa9daa58a39"
 
 caniuse-db@^1.0.30000794:
-  version "1.0.30000795"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000795.tgz#644f03fab00dd8bd1693e5e1e70d86b31c5cfece"
+  version "1.0.30000797"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000797.tgz#6eb0285c4db205dc8f46193f51b192d966d8f7e8"
 
 caniuse-lite@^1.0.30000792:
   version "1.0.30000792"
