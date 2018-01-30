@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@wearegenki/eslint-config@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@wearegenki/eslint-config/-/eslint-config-0.4.0.tgz#edf88110c4ea4385f35c496486293c7ea12698c9"
+"@wearegenki/eslint-config@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@wearegenki/eslint-config/-/eslint-config-0.4.1.tgz#8eb1f25d20f5d82e6a4f89c34fb80d6b7c90d9c2"
   dependencies:
     eslint-config-airbnb-base "^12.1.0"
     eslint-plugin-compat "^2.2.0"
@@ -201,8 +201,8 @@ camelcase@^1.0.2:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-1.2.1.tgz#9bb5304d2e0b56698b2c758b08a3eaa9daa58a39"
 
 caniuse-db@^1.0.30000794:
-  version "1.0.30000797"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000797.tgz#6eb0285c4db205dc8f46193f51b192d966d8f7e8"
+  version "1.0.30000799"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000799.tgz#0904953de93f3f492647e58c1a1bda7a73a0cb0b"
 
 caniuse-lite@^1.0.30000792:
   version "1.0.30000792"
@@ -543,8 +543,8 @@ eslint-plugin-import@^2.8.0:
     read-pkg-up "^2.0.0"
 
 eslint-plugin-vue@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-4.2.0.tgz#25fade387bf9a97377cf0e5cd17ef0d60ac9da57"
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-4.2.2.tgz#63e55c61574af8ef983328ddd2688d6389a0214b"
   dependencies:
     vue-eslint-parser "^2.0.1"
 
@@ -742,8 +742,8 @@ glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2:
     path-is-absolute "^1.0.0"
 
 globals@^11.0.1:
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-11.2.0.tgz#aa2ece052a787563ba70a3dcd9dc2eb8a9a0488c"
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.3.0.tgz#e04fdb7b9796d8adac9c8f64c14837b2313378b0"
 
 globby@^5.0.0:
   version "5.0.0"
