@@ -7,4 +7,10 @@ module.exports = {
   extends: [
     '@wearegenki/eslint-config',
   ],
+  parserOptions: {
+    ecmaVersion: 6,
+  },
+  rules: {
+    'no-var': 'off', // runtimes should be es3
+  },
 };
