@@ -1,5 +1,3 @@
-// https://eslint.org/docs/user-guide/configuring
-
 'use strict';
 
 module.exports = {
@@ -11,6 +9,10 @@ module.exports = {
     ecmaVersion: 6,
   },
   rules: {
-    'no-var': 'off', // runtimes should be es3
+    // runtime should be es3
+    'no-var': 'off',
+    'vars-on-top': 'off',
+    'prefer-destructuring': 'off',
+    'prefer-arrow-callback': 'off',
   },
 };
