@@ -1,12 +1,12 @@
 /**
- * Handle inputs with dynamic attribute expressions
+ * Runtime to handle dynamic attribute expressions
  *
- * In a separate module so it's imported it only when necessary.
+ * In a separate module so it's imported only when necessary.
  */
 
-'use strict'; // eslint-disable-line
+'use strict';
 
-let setupDone = false;
+var setupDone = false;
 
 module.exports = function setup(component, nodes, event) {
   console.log('TODO: RUNTIME DYNAMIC ATTRIBUTES');
