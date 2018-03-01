@@ -1,3 +1,7 @@
+/**
+ * Runtime to handle setting the component state from an input event.
+ */
+
 'use strict';
 
 /**
@@ -21,18 +25,17 @@ module.exports = function bind(component, key, cb, event, el) {
   // console.log('//------------------------------------------//\n');
 
   var value;
-  var selected;
+  var assignment;
 
   if (el.tagName === 'SELECT') {
     // select
     // XXX: el.selectedOptions would be better but isn't supported in IE
-    value = []
+    var selected = []
       .filter.call(el.options, function (opt) { return opt.selected; })
       .map(function (opt) { return opt.value; });
 
-    selected = value[0];
-
-    if (!el.multiple) value = value[0];
+    value = el.multiple ? selected : selected[0];
+    assignment = selected[0];
   } else if (el.type === 'checkbox') {
     // checkbox
     value = el.checked;
@@ -47,10 +50,10 @@ module.exports = function bind(component, key, cb, event, el) {
 
   component.setState(key, value);
 
-  if (selected) {
+  if (assignment) {
     // without update() the value assignment doesn't work
     component.update();
-    el.value = selected; // eslint-disable-line no-param-reassign
+    el.value = assignment; // eslint-disable-line no-param-reassign
   }
 
   // run callback function (with context this = component)
