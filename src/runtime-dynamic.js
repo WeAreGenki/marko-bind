@@ -5,7 +5,22 @@
 
 'use strict';
 
-module.exports = function setup() {
-  // eslint-disable-next-line no-console
-  console.error('[marko-bind] Dynamic expressions are not implemented yet. PRs welcome.');
+var setupDone = false;
+
+module.exports = function setup(component, nodes, event) {
+  console.error('Dynamic expressions are not implemented yet. PRs welcome.');
+
+  console.log('component', component);
+  console.log('nodes', nodes);
+  console.log('event', event);
+
+  if (!setupDone) {
+    nodes.forEach(function (node) {
+      // eslint-disable-line prefer-arrow-callback, func-names
+      console.log(node);
+      // const attribute = node.getAttribute('__bind');
+      // console.log(attribute);
+    });
+    setupDone = true;
+  }
 };
