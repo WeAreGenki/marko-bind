@@ -1,7 +1,7 @@
 {
   "name": "marko-bind",
   "version": "0.1.0",
-  "description": "An easy way to do reactive data binding in MarkoJS.",
+  "description": "Easy reactive data binding for MarkoJS.",
   "keywords": [
     "marko",
     "markojs",
@@ -23,14 +23,14 @@
     "test": "echo 'Tests are still a TODO.'; exit 1"
   },
   "peerDependencies": {
-    "marko": "^4.7.5"
+    "marko": "^4.8.0"
   },
   "devDependencies": {
     "@types/lasso": "^2.4.0",
     "@wearegenki/eslint-config": "^0.4.2",
-    "eslint": "^4.16.0",
+    "eslint": "^4.18.1",
     "lasso": "^3.1.2",
     "lasso-marko": "^2.4.0",
-    "marko": "^4.7.5"
+    "marko": "^4.8.0"
   }
 }
