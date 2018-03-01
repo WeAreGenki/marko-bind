@@ -1,6 +1,6 @@
 # `marko-bind`
 
-An easy way to do reactive data binding in [MarkoJS](https://markojs.com).
+Easy reactive data binding for [MarkoJS](https://markojs.com).
 
 Provides a custom `bind()` directive which binds an input's value and events to a marko component state.
 
@@ -50,9 +50,11 @@ For the attribute value you can use whatever makes sense to your application. St
 <input bind(state.userName) type="text" name="username"/>
 ```
 
-It's also possible to use a dynamic JavaScript expression or reference a component method. This can also return either a string or the state object.
+**WARNING: Dynamic expressions are not implemented yet. PRs welcome.**
 
-> NOTE Because the attribute value is evaluated at runtime we need to include an additional runtime module to handle binding once we know the state.
+~~It's also possible to use a dynamic JavaScript expression or reference a component method. This can also return either a string or the state object.~~
+
+> NOTE: When the attribute value is evaluated at runtime we need to include an additional runtime module to handle setup once we know which event and state to bind to.
 
 Example:
 
