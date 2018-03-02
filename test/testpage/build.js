@@ -2,25 +2,27 @@
 
 'use strict';
 
+const path = require('path');
 const lasso = require('lasso');
 
-lasso.configure({
-  plugins: ['lasso-marko'],
-  urlPrefix: '/',
-  outputDir: __dirname,
-  bundlingEnabled: true,
-  minify: false,
-  fingerprintsEnabled: false,
-});
+(async () => {
+  try {
+    lasso.configure({
+      plugins: ['lasso-marko'],
+      urlPrefix: '/static/',
+      outputDir: path.join(__dirname, 'static'),
+      bundlingEnabled: true,
+      minify: false,
+      fingerprintsEnabled: false,
+    });
 
-lasso
-  .lassoPage({
-    name: 'testpage',
-    dependencies: ['require-run: ./test/testpage/entry'],
-  })
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((err) => {
+    const result = await lasso.lassoPage({
+      name: 'test',
+      dependencies: ['require-run: ./test/testpage/entry'],
+    });
+
+    console.log('\nTest page build result:', result);
+  } catch (err) {
     throw err;
-  });
+  }
+})();
