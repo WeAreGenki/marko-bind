@@ -18,6 +18,8 @@
  * limitations under the License.
  */
 
+/* eslint-env es6 */
+
 'use strict';
 
 const runtimeModulePath = require.resolve('./runtime');
@@ -35,6 +37,7 @@ module.exports = function transform(el, context) {
   // figure out what the attribute refers to
   let toExpression = builder.parseExpression(attribute.argument);
 
+  /* eslint-disable no-console */ // FIXME: REMOVE; DEBUGGING ONLY!!
   // console.log('\n@@--------------------------------------------------------@@');
   // console.log('@@ ATTR', attribute);
   // console.log('@@ EXPRESSION', toExpression);
@@ -67,7 +70,7 @@ module.exports = function transform(el, context) {
   }
 
   /**
-   * Regular attribute expression which can be set up at compile time.
+   * Non-dynamic attribute expression which can be set up at compile time.
    */
 
   context.importModule('__bind', runtimeModulePath);
@@ -87,19 +90,22 @@ module.exports = function transform(el, context) {
   ];
   const propValue = builder.functionCall(eventMethod, eventArgs);
 
-  function checkBindConflicts(attribute, event) {
+  function checkBindConflicts(targetAttribute, targetEvent) {
+    console.log('@@ checkBindConflict', targetAttribute, targetEvent);
+
     // TODO
     const conflict = false;
     if (conflict) console.log('x');
   }
 
-  /** Handle cases for the various input types */
+  /**
+   * Handle cases for different input types.
+   */
 
   const tag = el.tagName;
   const type = el.getAttribute('type');
 
-  // console.log('####  TAG', tag);
-  // console.log('#### TYPE', type);
+  console.log('\n#### TAG:', tag, '## TYPE:', type, '####');
 
   if (tag === 'select') {
     // select
