@@ -17,7 +17,7 @@ const lasso = require('lasso');
     });
 
     const result = await lasso.lassoPage({
-      name: 'test',
+      name: 'index',
       dependencies: ['require-run: ./test/manual-testing/client'],
     });
 
