@@ -22,7 +22,7 @@
     "pretest": "npm run lint",
     "test": "jest --config test/jest.conf.js --coverage",
     "test:dev": "jest --config test/jest.conf.js --coverage --notify --watch",
-    "build:testpage": "node test/testpage/build.js"
+    "testpage": "node test/testpage/build.js && node test/testpage/serve.js"
   },
   "peerDependencies": {
     "marko": "^4.8.0"
@@ -38,6 +38,7 @@
     "lasso-marko": "^2.4.0",
     "marko": "^4.8.0",
     "mkdirp": "^0.5.1",
+    "node-static": "^0.7.10",
     "puppeteer": "^1.1.1",
     "rimraf": "^2.6.2"
   }
