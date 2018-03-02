@@ -7,3 +7,7 @@ package-lock.json*
 *.marko.js
 *.bak.js
 *.bak
+
+# Compiled resources
+/test/testpage/testpage.js
+/test/testpage/testpage.css

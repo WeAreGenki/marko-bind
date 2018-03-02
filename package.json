@@ -20,7 +20,8 @@
   "scripts": {
     "lint": "eslint --ext .js,.marko src test",
     "pretest": "npm run lint",
-    "test": "echo 'Tests are still a TODO.'; exit 1"
+    "test": "echo 'Tests are still a TODO.'; exit 1",
+    "build:testpage": "node test/testpage/build.js"
   },
   "peerDependencies": {
     "marko": "^4.8.0"
