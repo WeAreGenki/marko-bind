@@ -18,7 +18,7 @@ const lasso = require('lasso');
 
     const result = await lasso.lassoPage({
       name: 'test',
-      dependencies: ['require-run: ./test/testpage/entry'],
+      dependencies: ['require-run: ./test/manual-testing/client'],
     });
 
     console.log('\nTest page build result:', result);

@@ -22,7 +22,7 @@
     "pretest": "npm run lint",
     "test": "jest --config test/jest.conf.js --coverage",
     "test:dev": "jest --config test/jest.conf.js --coverage --notify --watch",
-    "testpage": "node test/testpage/build.js && node test/testpage/serve.js"
+    "testpage": "node test/manual-testing/build.js && node test/manual-testing/serve.js"
   },
   "peerDependencies": {
     "marko": "^4.8.0"
