@@ -23,9 +23,6 @@
 const runtimeModulePath = require.resolve('./runtime');
 const runtimeDynamicModulePath = require.resolve('./runtime-dynamic');
 
-const dynamicallyBound = [];
-let dynamicRuntimeLoaded = false;
-
 module.exports = function transform(el, context) {
   const attribute = el.getAttribute('bind');
 
@@ -52,43 +49,26 @@ module.exports = function transform(el, context) {
     // if the attribute is a string then assume it's a child of the state object
     toExpression = builder.memberExpression('state', toExpression.value);
   } else if (toExpression.type !== 'MemberExpression') {
-    // dynamic attribute expression which must be handled at runtime
+    /**
+     * Dynamic attribute expression which must be handled at runtime.
+     */
 
-    dynamicallyBound.push(el);
+    context.importModule('__bindNodeSetup', runtimeDynamicModulePath);
 
     // create an attribute we can parse at runtime
     el.setAttributeValue('__bind', builder.literal(toExpression.name));
 
-    if (!dynamicRuntimeLoaded) {
-      // import additional runtime module
-      context.importModule('__bindDynamic', runtimeDynamicModulePath);
-
-      // call the runtime setup module after all the nodes are in place
-      const astNodes = context.root.body.array;
-      const lastNode = astNodes[astNodes.length - 1];
-      // console.log('dynamicallyBound', dynamicallyBound);
-      lastNode.appendChild(builder.node(() =>
-        builder.functionCall(builder.identifier('__bindDynamic'), [
-          builder.identifier('component'),
-          builder.arrayExpression(dynamicallyBound),
-        ])
-      )); // eslint-disable-line function-paren-newline
-
-      // call the runtime setup module before any dynamic bind() inputs
-      // console.log('dynamicallyBound', dynamicallyBound);
-      // el.prependChild(builder.node(() =>
-      // // el.appendChild(builder.node(() =>
-      //   builder.functionCall(builder.identifier('__bindDynamic'), [
-      //     builder.identifier('component'),
-      //     builder.arrayExpression(dynamicallyBound),
-      //   ])
-      // ));
-
-      dynamicRuntimeLoaded = true;
-    }
+    el.replaceWith(builder.node(() => builder.functionCall(
+      builder.identifier('__bindNodeSetup'),
+      [el]
+    )));
 
     return; // exit early because the rest is for non-dynamic element setup
   }
+
+  /**
+   * Regular attribute expression which can be set up at compile time.
+   */
 
   context.importModule('__bind', runtimeModulePath);
 
