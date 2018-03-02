@@ -18,9 +18,10 @@
     "src/"
   ],
   "scripts": {
-    "lint": "eslint --ext .js,.marko src test",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.marko src test",
     "pretest": "npm run lint",
-    "test": "jest",
+    "test": "jest --config test/jest.conf.js --coverage",
+    "test:dev": "jest --config test/jest.conf.js --coverage --notify --watch",
     "build:testpage": "node test/testpage/build.js"
   },
   "peerDependencies": {
@@ -36,6 +37,7 @@
     "lasso": "^3.1.2",
     "lasso-marko": "^2.4.0",
     "marko": "^4.8.0",
+    "mkdirp": "^0.5.1",
     "puppeteer": "^1.1.1",
     "rimraf": "^2.6.2"
   }

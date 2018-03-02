@@ -1,13 +1,10 @@
 node_modules/
 dist/
-test/unit/coverage/
+test/coverage/
+test/testpage/static/
 package-lock.json*
 *.log
 .cache/
 *.marko.js
 *.bak.js
 *.bak
-
-# Compiled resources
-/test/testpage/testpage.js
-/test/testpage/testpage.css

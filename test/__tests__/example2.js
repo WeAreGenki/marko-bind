@@ -1,3 +1,5 @@
+'use strict';
+
 const timeout = 5000;
 
 describe(
@@ -14,7 +16,7 @@ describe(
     });
 
     it('should load without error', async () => {
-      let text = await page.evaluate(() => document.body.textContent);
+      const text = await page.evaluate(() => document.body.textContent);
       expect(text).toContain('google');
     });
   },

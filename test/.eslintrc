@@ -1,5 +1,9 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
   "env": {
+    "browser": true,
     "jest": true,
     "jest/globals": true
   },
