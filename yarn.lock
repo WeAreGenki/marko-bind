@@ -28,7 +28,7 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/lasso@^2.4.0":
+"@types/lasso@2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/lasso/-/lasso-2.4.0.tgz#93a753f2a3b98c7c375972311556ff1edff5a0f3"
   dependencies:
@@ -51,7 +51,7 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@wearegenki/eslint-config@^0.4.2":
+"@wearegenki/eslint-config@0.4.2":
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@wearegenki/eslint-config/-/eslint-config-0.4.2.tgz#29d7eae70e29d15408930b69ddb3c05dddaf3b63"
   dependencies:
@@ -620,7 +620,7 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@^4.18.1:
+eslint@4.18.1:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.18.1.tgz#b9138440cb1e98b2f44a0d578c6ecf8eae6150b0"
   dependencies:
@@ -1038,7 +1038,7 @@ lasso-loader@^3.0.2:
     events "^1.0.2"
     raptor-util "^1.0.0"
 
-lasso-marko@^2.4.0:
+lasso-marko@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/lasso-marko/-/lasso-marko-2.4.0.tgz#9f31a8ea7fc653521d0bc2163857dc681184822d"
   dependencies:
@@ -1066,7 +1066,7 @@ lasso-resolve-from@^1.2.0:
     raptor-util "^1.0.10"
     resolve-from "^2.0.0"
 
-lasso@^3.1.2:
+lasso@3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/lasso/-/lasso-3.1.2.tgz#b418a4d0f31ad6096b8f3c654c744b0c70bac13f"
   dependencies:
@@ -1164,7 +1164,7 @@ lru-cache@^4.0.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
-marko@^4.2.8, marko@^4.8.0:
+marko@4.8.0, marko@^4.2.8:
   version "4.8.0"
   resolved "https://registry.yarnpkg.com/marko/-/marko-4.8.0.tgz#c0cfcae238d8bff04b7a6965c69e6d2970b86532"
   dependencies:
