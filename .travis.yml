@@ -7,14 +7,11 @@ node_js:
 sudo: false
 
 branches:
-   only:
-   - master
-   - devel
+  only:
+    - master
+    - devel
 
-cache:
-  yarn: true
-  directories:
-    - "node_modules"
+cache: yarn
 
 script:
   - yarn run test-ci
