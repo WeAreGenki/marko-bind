@@ -20,7 +20,7 @@
 
 /* eslint-env es6 */
 
-'use strict';
+'use strict'; // eslint-disable-line
 
 const runtimeModulePath = require.resolve('./runtime');
 const runtimeDynamicModulePath = require.resolve('./runtime-dynamic');

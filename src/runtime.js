@@ -2,7 +2,7 @@
  * Runtime to handle setting the component state from an input event.
  */
 
-'use strict';
+'use strict'; // eslint-disable-line
 
 /**
  * Bind the value from an input event to a component state.

@@ -3,7 +3,7 @@
  * In a separate module so it's imported only when necessary.
  */
 
-'use strict';
+'use strict'; // eslint-disable-line
 
 module.exports = function setup() {
   // eslint-disable-next-line no-console
