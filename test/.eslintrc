@@ -1,12 +1,3 @@
 {
-  "parserOptions": {
-    "ecmaVersion": 8
-  },
-  "env": {
-    "browser": true,
-    "jest": true,
-    "jest/globals": true
-  },
-  "plugins": ["jest"],
-  "extends": ["plugin:jest/recommended"]
+  "extends": ["@wearegenki/eslint-config/test"]
 }
