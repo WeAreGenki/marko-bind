@@ -21,7 +21,8 @@
     "lint": "eslint --ignore-path .gitignore --ext .js,.marko src test",
     "pretest": "npm run lint",
     "test": "jest --config test/jest.config.js --coverage",
-    "test:dev": "jest --config test/jest.config.js --coverage --notify --watch",
+    "test-ci": "yarn test --runInBand",
+    "test:watch": "yarn test --notify --watch",
     "testpage": "node test/manual-tests/build.js && testserver ./test/manual-tests/"
   },
   "peerDependencies": {
