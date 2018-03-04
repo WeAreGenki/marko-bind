@@ -9,6 +9,7 @@ sudo: false
 branches:
    only:
    - master
+   - devel
 
 cache:
   yarn: true
