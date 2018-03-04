@@ -1,0 +1,15 @@
+class {
+  onCreate(input) {
+    this.state = input.state || {
+      selected: '',
+    };
+  }
+}
+
+select bind('selected')
+  option#opt1 -- opt1
+  option#opt2 -- opt2
+  option#opt3 -- opt3
+  option#opt4 -- opt4
+
+div#result -- ${state.selected}
