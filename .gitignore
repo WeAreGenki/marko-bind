@@ -1,7 +1,7 @@
 node_modules/
 dist/
 test/coverage/
-test/manual-testing/static/
+test/manual-tests/static/
 package-lock.json*
 *.log
 .cache/

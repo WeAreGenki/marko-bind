@@ -1,6 +1,4 @@
-/* eslint-disable no-console */
-
-'use strict';
+'use strict'; // eslint-disable-line
 
 const path = require('path');
 const lasso = require('lasso');
@@ -18,7 +16,7 @@ const lasso = require('lasso');
 
     const result = await lasso.lassoPage({
       name: 'index',
-      dependencies: ['require-run: ./test/manual-testing/client'],
+      dependencies: ['require-run: ./test/manual-tests/client'],
     });
 
     console.log('\nTest page build result:', result);
