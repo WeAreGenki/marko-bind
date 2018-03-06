@@ -29,7 +29,7 @@
     "marko": "^4.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^22.1.4",
+    "@types/jest": "^22.2.0",
     "@types/lasso": "^2.4.0",
     "@wearegenki/eslint-config": "0.5.0-alpha.95164c83",
     "@wearegenki/test": "0.5.0-alpha.95164c83",
