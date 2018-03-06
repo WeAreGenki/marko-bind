@@ -2364,7 +2364,7 @@ lasso-loader@^3.0.2:
     events "^1.0.2"
     raptor-util "^1.0.0"
 
-lasso-marko@^2.4.0:
+lasso-marko@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/lasso-marko/-/lasso-marko-2.4.0.tgz#9f31a8ea7fc653521d0bc2163857dc681184822d"
   dependencies:
@@ -2392,7 +2392,7 @@ lasso-resolve-from@^1.2.0:
     raptor-util "^1.0.10"
     resolve-from "^2.0.0"
 
-lasso@^3.1.2:
+lasso@3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/lasso/-/lasso-3.1.2.tgz#b418a4d0f31ad6096b8f3c654c744b0c70bac13f"
   dependencies:
