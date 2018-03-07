@@ -75,9 +75,9 @@
   version "22.2.0"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.0.tgz#55ce83139f7ad1b48b414c3927746614c6963c0f"
 
-"@wearegenki/eslint-config@0.5.0-alpha.95164c83":
-  version "0.5.0-alpha.95164c83"
-  resolved "https://registry.yarnpkg.com/@wearegenki/eslint-config/-/eslint-config-0.5.0-alpha.95164c83.tgz#db3901e65c773f18fbd01b0d0022e56b203dfcbb"
+"@wearegenki/eslint-config@0.5.0-alpha.f1eec7f5":
+  version "0.5.0-alpha.f1eec7f5"
+  resolved "https://registry.yarnpkg.com/@wearegenki/eslint-config/-/eslint-config-0.5.0-alpha.f1eec7f5.tgz#322b760d962f60d29bcdde2456c8da04d48d272c"
   dependencies:
     babel-eslint "^8.2.2"
     eslint-config-airbnb-base "^12.1.0"
