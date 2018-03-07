@@ -18,15 +18,23 @@ describe('component', () => {
     });
   });
 
-  it.skip('should getValue() correctly', () => {
-    const render = component.render({
-      id: 'woo',
+  it.skip('should have an input', async () => {
+    const renderResult = await component.render({
+      id: 'oom',
       label: 'aaa',
       placeholder: 'aaa',
     });
-    return render.then((renderResult) => {
-      renderResult.appendTo(document.body);
-      expect(renderResult.getComponent().getValue()).toBe('woo');
+    const browserContext = renderResult.appendTo(document.body).getComponent();
+    expect(browserContext.input).toBeDefined();
+  });
+
+  it.skip('should getValue() correctly', async () => {
+    const renderResult = await component.render({
+      id: 'woo',
+      label: 'bbb',
+      placeholder: 'bbb',
     });
+    const browserContext = renderResult.appendTo(document.body).getComponent();
+    expect(browserContext.getValue()).toBe('woo');
   });
 });

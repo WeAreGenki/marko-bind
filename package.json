@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ext .js,.marko src test",
-    "pretest": "npm run lint",
+    "pretest": "yarn lint",
     "test": "jest --config test/jest.config.js --coverage",
     "test-ci": "yarn test --runInBand",
     "test:watch": "yarn test --notify --watch",
@@ -29,10 +29,14 @@
     "marko": "^4.0.0"
   },
   "devDependencies": {
+    "@lasso/marko-taglib": "^1.0.10",
     "@types/jest": "^22.2.0",
     "@wearegenki/eslint-config": "0.5.0-alpha.f1eec7f5",
     "eslint": "^4.18.2",
+    "express": "^4.16.2",
     "jest": "^22.4.2",
+    "lasso": "^3.1.2",
+    "lasso-marko": "^2.4.0",
     "marko": "^4.9.1"
   }
 }
