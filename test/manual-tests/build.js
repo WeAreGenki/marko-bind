@@ -1,3 +1,6 @@
+// FIXME:
+/* eslint-disable */
+
 'use strict'; // eslint-disable-line
 
 const path = require('path');

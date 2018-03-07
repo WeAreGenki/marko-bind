@@ -1,19 +1,27 @@
 'use strict'; // eslint-disable-line
 
-const path = require('path');
-
-const { libDir } = require('@wearegenki/test');
+const resolve = require('path').resolve;
 
 module.exports = {
-  preset: '@wearegenki/test',
-  rootDir: path.resolve(__dirname, '..'),
-  coverageDirectory: '<rootDir>/test/coverage',
-
-  // marko specific setup
-  browser: true, // use browser field in package.json
-  resolver: `${libDir}/marko/resolver.js`,
+  rootDir: resolve(__dirname, '..'),
+  testPathIgnorePatterns: [
+    '<rootDir>/node_modules/',
+    '<rootDir>/\\.cache/',
+    '/static/',
+  ],
   transform: {
-    // '^.+\\.jsx?$': 'babel-jest', // don't use babel to transpile
-    '^.+\\.(html|marko)$': `${libDir}/marko/transform.js`,
+    '^.+\\.(marko)$': '<rootDir>/test/transform.js',
   },
+  moduleFileExtensions: ['js', 'marko'],
+  coverageDirectory: '<rootDir>/test/coverage',
+  collectCoverageFrom: ['src/**/*.js'],
+  // coverageThreshold: {
+  //   global: {
+  //     branches: 0,
+  //     functions: 0,
+  //     lines: 0,
+  //     statements: 0,
+  //   },
+  // },
+  coverageReporters: ['text'],
 };

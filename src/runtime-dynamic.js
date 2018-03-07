@@ -5,6 +5,7 @@
 
 'use strict'; // eslint-disable-line
 
+/* istanbul ignore next */
 module.exports = function setup() {
   // eslint-disable-next-line no-console
   console.error('[marko-bind] Dynamic expressions are not implemented yet. PRs welcome.');
