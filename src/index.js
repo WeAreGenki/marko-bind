@@ -18,13 +18,12 @@
  * limitations under the License.
  */
 
-'use strict';
+/* eslint-env es6 */
+
+'use strict'; // eslint-disable-line
 
 const runtimeModulePath = require.resolve('./runtime');
 const runtimeDynamicModulePath = require.resolve('./runtime-dynamic');
-
-const dynamicallyBound = [];
-let dynamicRuntimeLoaded = false;
 
 module.exports = function transform(el, context) {
   const attribute = el.getAttribute('bind');
@@ -38,6 +37,7 @@ module.exports = function transform(el, context) {
   // figure out what the attribute refers to
   let toExpression = builder.parseExpression(attribute.argument);
 
+  /* eslint-disable no-console */ // FIXME: REMOVE; DEBUGGING ONLY!!
   // console.log('\n@@--------------------------------------------------------@@');
   // console.log('@@ ATTR', attribute);
   // console.log('@@ EXPRESSION', toExpression);
@@ -52,43 +52,26 @@ module.exports = function transform(el, context) {
     // if the attribute is a string then assume it's a child of the state object
     toExpression = builder.memberExpression('state', toExpression.value);
   } else if (toExpression.type !== 'MemberExpression') {
-    // dynamic attribute expression which must be handled at runtime
+    /**
+     * Dynamic attribute expression which must be handled at runtime.
+     */
 
-    dynamicallyBound.push(el);
+    context.importModule('__bindNodeSetup', runtimeDynamicModulePath);
 
     // create an attribute we can parse at runtime
     el.setAttributeValue('__bind', builder.literal(toExpression.name));
 
-    if (!dynamicRuntimeLoaded) {
-      // import additional runtime module
-      context.importModule('__bindDynamic', runtimeDynamicModulePath);
-
-      // call the runtime setup module after all the nodes are in place
-      const astNodes = context.root.body.array;
-      const lastNode = astNodes[astNodes.length - 1];
-      // console.log('dynamicallyBound', dynamicallyBound);
-      lastNode.appendChild(builder.node(() =>
-        builder.functionCall(builder.identifier('__bindDynamic'), [
-          builder.identifier('component'),
-          builder.arrayExpression(dynamicallyBound),
-        ])
-      )); // eslint-disable-line function-paren-newline
-
-      // call the runtime setup module before any dynamic bind() inputs
-      // console.log('dynamicallyBound', dynamicallyBound);
-      // el.prependChild(builder.node(() =>
-      // // el.appendChild(builder.node(() =>
-      //   builder.functionCall(builder.identifier('__bindDynamic'), [
-      //     builder.identifier('component'),
-      //     builder.arrayExpression(dynamicallyBound),
-      //   ])
-      // ));
-
-      dynamicRuntimeLoaded = true;
-    }
+    el.replaceWith(builder.node(() => builder.functionCall(
+      builder.identifier('__bindNodeSetup'),
+      [el]
+    )));
 
     return; // exit early because the rest is for non-dynamic element setup
   }
+
+  /**
+   * Non-dynamic attribute expression which can be set up at compile time.
+   */
 
   context.importModule('__bind', runtimeModulePath);
 
@@ -107,19 +90,22 @@ module.exports = function transform(el, context) {
   ];
   const propValue = builder.functionCall(eventMethod, eventArgs);
 
-  function checkBindConflicts(attribute, event) {
+  function checkBindConflicts(targetAttribute, targetEvent) {
+    console.log('@@ checkBindConflict', targetAttribute, targetEvent);
+
     // TODO
     const conflict = false;
     if (conflict) console.log('x');
   }
 
-  /** Handle cases for the various input types */
+  /**
+   * Handle cases for different input types.
+   */
 
   const tag = el.tagName;
   const type = el.getAttribute('type');
 
-  // console.log('####  TAG', tag);
-  // console.log('#### TYPE', type);
+  console.log('\n#### TAG:', tag, '## TYPE:', type, '####');
 
   if (tag === 'select') {
     // select

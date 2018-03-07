@@ -1,0 +1,11 @@
+class {
+  onCreate(input) {
+    this.state = input.state || {
+      text: '',
+    };
+  }
+}
+
+input bind('text')
+
+div#result -- ${state.text}

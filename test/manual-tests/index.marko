@@ -1,0 +1,162 @@
+class {
+  onCreate() {
+    this.state = {
+      inputText1: '',
+      inputText2: 'C10H16N5O13P3',
+      inputText3: '',
+      select1: '',
+      select2: 'opt2',
+      select3: '',
+
+    };
+  }
+
+  dynamicExpression() {
+    return this.state.inputText2;
+  }
+}
+
+style {
+  body {
+    color: #263238;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    background: #fafafa;
+  }
+
+  h2 {
+    padding: 10px;
+    margin-top: 70px;
+    color: #fff;
+    text-align: center;
+    background-color: #263238;
+  }
+
+  h3 {
+    margin-top: 50px;
+    text-decoration: underline;
+    text-decoration-color: #6495ed;
+  }
+
+  .form-row {
+    margin-bottom: 20px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 20px;
+  }
+}
+
+h1 -- marko-bind tests
+
+h2 -- BUILD-TIME SETUP
+
+h3 -- Text input
+
+code
+  pre
+    -- inputText1: ${state.inputText1}
+
+div.form-row
+  input bind('inputText1') type="text"
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+h3 -- Text input with extra attributes
+
+code
+  pre
+    -- inputText2: ${state.inputText2}
+
+div.form-row
+  input bind('inputText2') type="text"
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+h3 -- Multiple text inputs
+
+code
+  pre
+    -- inputText3: ${state.inputText3}
+
+div.form-row
+  input bind('inputText3') type="text"
+  input bind('inputText3') type="text" value="existing values should be discarded"
+  input bind('inputText3') type="text"
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+h3 -- Select without default
+
+code
+  pre
+    -- select1: ${state.select1}
+
+div.form-row
+  select bind('select1')
+    option id="opt1" -- opt1
+    option id="opt2" -- opt2
+    option id="opt3" -- opt3
+    option id="opt4" -- opt4
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+h3 -- Select with existing state
+
+code
+  pre
+    -- select2: ${state.select2}
+
+div.form-row
+  select bind('select2')
+    option id="opt1" -- opt1
+    option id="opt2" -- opt2
+    option id="opt3" -- opt3
+    option id="opt4" -- opt4
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+h3 -- Multiple selects
+
+code
+  pre
+    -- select3: ${state.select3}
+
+div.form-row
+  select bind('select3')
+    option id="opt1" -- opt1
+    option id="opt2" -- opt2
+    option id="opt3" -- opt3
+    option id="opt4" -- opt4
+
+div.form-row
+  select bind('select3')
+    option id="opt1" -- opt1
+    option id="opt2" -- opt2
+    option id="opt3" -- opt3
+    option id="opt4" -- opt4
+
+div.form-row
+  select bind('select3')
+    option id="opt1" -- opt1
+    option id="opt2" -- opt2
+    option id="opt3" -- opt3
+    option id="opt4" -- opt4
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+h2 -- RUNTIME SETUP
+
+h3 -- Dynamic expression text input
+
+code
+  pre
+    -- dynamicExpression resolving to inputText3: ${state.inputText3}
+
+div.form-row
+  input bind(component.dynamicExpression) type="text"
+  input bind(component.dynamicExpression()) type="text"
+  input bind(component.dynamicExpression()) type="text"
+  input bind(component.dynamicExpression()) type="text"
