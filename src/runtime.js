@@ -13,13 +13,14 @@
  * @param {(HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement)} el The input
  * element which emit the event.
  */
-// module.exports = function bind(component, key, cb, event, el) {
-module.exports = function bind(component, key, cb, event, el, ...bonus) {
+module.exports = function bind(component, key, cb, event, el) {
+// module.exports = function bind(component, key, cb, event, el, ...bonus) {
   var selected;
   var value;
   var assignment;
 
   /* eslint-disable no-console */ // FIXME: REMOVE; DEBUGGING ONLY!!
+  /*
   console.log('\n//------------------------------------------//');
   console.log('RUNTIME COMP', component);
   console.log('RUNTIME  KEY', key);
@@ -30,6 +31,7 @@ module.exports = function bind(component, key, cb, event, el, ...bonus) {
   console.log('RUNTIME TYPE', el.type);
   console.log('RUNTIME BONUS', bonus);
   console.log('//------------------------------------------//\n');
+  */
 
   if (el.tagName === 'SELECT') {
     // select
