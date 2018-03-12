@@ -1,41 +1,50 @@
-'use strict'; // eslint-disable-line
+// 'use strict'; // eslint-disable-line
 
-const InputText = require('./fixtures/InputText');
-// const InputSelect = require('./fixtures/InputSelect');
+// const { expect } = require('chai');
+// // const InputText = require('./fixtures/InputText');
+// // const InputSelect = require('./fixtures/InputSelect');
 
-describe('Basic text input component', () => {
-  it('should have a renderToString function', () => {
-    expect(InputText.renderToString).toBeDefined();
-  });
+// test('should always work', () => {
+//   expect(1 + 2).to.equal(3);
+// });
 
-  it('should render correctly', () => {
-    InputText.renderToString({
-      id: 'txtMoo',
-      label: 'Moo',
-      placeholder: 'E.g: cow',
-    }, (err, html) => {
-      if (err) throw err;
-      expect(html).toMatchSnapshot();
-    });
-  });
+// test('should always fail', () => {
+//   expect(1 + 2).to.equal(100);
+// });
 
-  // it('should have an input', async () => {
-  //   const renderResult = await InputText.render({
-  //     id: 'oom',
-  //     label: 'aaa',
-  //     placeholder: 'aaa',
-  //   });
-  //   const context = await mount(renderResult);
-  //   expect(context.input).toBeDefined();
-  // });
+// // describe('Basic text input component', () => {
+// //   // it('should have a renderToString function', () => {
+// //   //   expect(InputText.renderToString).toBeDefined();
+// //   // });
 
-  // it.skip('should getValue() correctly', async () => {
-  //   const renderResult = await InputText.render({
-  //     id: 'woo',
-  //     label: 'bbb',
-  //     placeholder: 'bbb',
-  //   });
-  //   const context = await mount(renderResult);
-  //   expect(context.getValue()).toBe('woo');
-  // });
-});
+// //   // it('should render correctly', () => {
+// //   //   InputText.renderToString({
+// //   //     id: 'txtMoo',
+// //   //     label: 'Moo',
+// //   //     placeholder: 'E.g: cow',
+// //   //   }, (err, html) => {
+// //   //     if (err) throw err;
+// //   //     expect(html).toMatchSnapshot();
+// //   //   });
+// //   // });
+
+// //   // it('should have an input', async () => {
+// //   //   const renderResult = await InputText.render({
+// //   //     id: 'oom',
+// //   //     label: 'aaa',
+// //   //     placeholder: 'aaa',
+// //   //   });
+// //   //   const context = await mount(renderResult);
+// //   //   expect(context.input).toBeDefined();
+// //   // });
+
+// //   // it.skip('should getValue() correctly', async () => {
+// //   //   const renderResult = await InputText.render({
+// //   //     id: 'woo',
+// //   //     label: 'bbb',
+// //   //     placeholder: 'bbb',
+// //   //   });
+// //   //   const context = await mount(renderResult);
+// //   //   expect(context.getValue()).toBe('woo');
+// //   // });
+// // });

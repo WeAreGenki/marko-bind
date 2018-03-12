@@ -23,7 +23,8 @@
     "lint": "eslint --ignore-path .gitignore --ext .js,.marko src test",
     "coverage": "nyc marko test",
     "pretest": "yarn lint",
-    "test": "marko test",
+    "__test": "marko test ./test/*.test.js",
+    "test": "marko test ./test/*.test.js",
     "posttest": "yarn coverage",
     "test-ci": "yarn test"
   },
