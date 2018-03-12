@@ -2,7 +2,4 @@
 
 module.exports = {
   preset: '@wearegenki/test',
-  transform: {
-    '^.+\\.(marko)$': '<rootDir>/test/transform.js',
-  },
 };

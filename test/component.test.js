@@ -18,6 +18,7 @@ describe('component', () => {
     });
   });
 
+  // eslint-disable-next-line jest/no-disabled-tests
   it.skip('should have an input', async () => {
     const renderResult = await component.render({
       id: 'oom',
@@ -28,6 +29,7 @@ describe('component', () => {
     expect(browserContext.input).toBeDefined();
   });
 
+  // eslint-disable-next-line jest/no-disabled-tests
   it.skip('should getValue() correctly', async () => {
     const renderResult = await component.render({
       id: 'woo',

@@ -1,3 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`component should render correctly 1`] = `"<!--M#s0--><div class=\\"field\\"><label class=\\"field_label\\" for=\\"s0-txtMoo\\">Moo</label><span class=\\"field_control field_control--textbox\\"><input type=\\"text\\" placeholder=\\"E.g: cow\\" class=\\"textbox\\" id=\\"s0-txtMoo\\"></span></div><!--M/s0-->"`;
+exports[`component should render correctly 1`] = `
+<!--M#s0-->
+<div class="field">
+  <label class="field_label" for="s0-txtMoo">Moo</label><span class="field_control field_control--textbox"><input type="text" placeholder="E.g: cow" class="textbox" id="s0-txtMoo"></span></div>
+<!--M/s0-->
+`;

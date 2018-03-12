@@ -1,3 +1,6 @@
 {
-  "extends": ["@wearegenki/eslint-config/jest"]
+  "extends": [
+    "@wearegenki/eslint-config/marko",
+    "@wearegenki/eslint-config/jest"
+  ]
 }
