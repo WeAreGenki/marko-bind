@@ -19,20 +19,24 @@
     "src/"
   ],
   "scripts": {
+    "testpage": "node test/manual-tests/build.js && testserver test/manual-tests/",
     "lint": "eslint --ignore-path .gitignore --ext .js,.marko src test",
+    "coverage": "nyc marko test",
     "pretest": "yarn lint",
     "test": "marko test",
-    "test-ci": "yarn test",
-    "testpage": "node test/manual-tests/build.js && testserver test/manual-tests/"
+    "posttest": "yarn coverage",
+    "test-ci": "yarn test"
   },
   "peerDependencies": {
     "marko": "^4.0.0"
   },
   "devDependencies": {
     "@wearegenki/eslint-config": "0.5.0",
+    "chai": "^4.1.2",
     "eslint": "4.18.2",
     "marko": "4.9.1",
-    "marko-cli": "^2.2.2"
+    "marko-cli": "^2.2.2",
+    "nyc": "^11.4.1"
   },
   "engines": {
     "node": ">= 6.9.0"

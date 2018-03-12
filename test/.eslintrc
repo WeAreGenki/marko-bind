@@ -1,6 +1,24 @@
 {
   "extends": [
-    "@wearegenki/eslint-config/marko",
-    "@wearegenki/eslint-config/jest"
-  ]
+    "@wearegenki/eslint-config/marko"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "module"
+  },
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "$": true,
+    "component": true,
+    "html": true,
+    "render": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": true,
+      "peerDependencies": true
+    }]
+  }
 }

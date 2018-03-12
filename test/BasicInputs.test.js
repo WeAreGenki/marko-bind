@@ -1,7 +1,5 @@
 'use strict'; // eslint-disable-line
 
-const { mount } = require('@wearegenki/test/lib/marko/helpers');
-
 const InputText = require('./fixtures/InputText');
 // const InputSelect = require('./fixtures/InputSelect');
 
@@ -21,15 +19,15 @@ describe('Basic text input component', () => {
     });
   });
 
-  it('should have an input', async () => {
-    const renderResult = await InputText.render({
-      id: 'oom',
-      label: 'aaa',
-      placeholder: 'aaa',
-    });
-    const context = await mount(renderResult);
-    expect(context.input).toBeDefined();
-  });
+  // it('should have an input', async () => {
+  //   const renderResult = await InputText.render({
+  //     id: 'oom',
+  //     label: 'aaa',
+  //     placeholder: 'aaa',
+  //   });
+  //   const context = await mount(renderResult);
+  //   expect(context.input).toBeDefined();
+  // });
 
   // it.skip('should getValue() correctly', async () => {
   //   const renderResult = await InputText.render({
