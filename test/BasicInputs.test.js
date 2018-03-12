@@ -1,14 +1,15 @@
 'use strict'; // eslint-disable-line
 
-const component = require('./fixtures/component');
+const InputText = require('./fixtures/InputText');
+// const InputSelect = require('./fixtures/InputSelect');
 
-describe('component', () => {
+describe('Basic text input component', () => {
   it('should have a renderToString function', () => {
-    expect(component.renderToString).toBeDefined();
+    expect(InputText.renderToString).toBeDefined();
   });
 
   it('should render correctly', () => {
-    component.renderToString({
+    InputText.renderToString({
       id: 'txtMoo',
       label: 'Moo',
       placeholder: 'E.g: cow',
@@ -18,9 +19,8 @@ describe('component', () => {
     });
   });
 
-  // eslint-disable-next-line jest/no-disabled-tests
   it.skip('should have an input', async () => {
-    const renderResult = await component.render({
+    const renderResult = await InputText.render({
       id: 'oom',
       label: 'aaa',
       placeholder: 'aaa',
@@ -29,9 +29,8 @@ describe('component', () => {
     expect(browserContext.input).toBeDefined();
   });
 
-  // eslint-disable-next-line jest/no-disabled-tests
   it.skip('should getValue() correctly', async () => {
-    const renderResult = await component.render({
+    const renderResult = await InputText.render({
       id: 'woo',
       label: 'bbb',
       placeholder: 'bbb',
