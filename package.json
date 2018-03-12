@@ -2,6 +2,11 @@
   "name": "marko-bind",
   "version": "0.1.0",
   "description": "Easy reactive data binding for MarkoJS.",
+  "repository": "https://github.com/WeAreGenki/marko-bind",
+  "bugs": "https://github.com/WeAreGenki/marko-bind/issues",
+  "homepage": "https://wearegenki.com/pro#OpenSource",
+  "author": "Max Milton <max@wearegenki.com>",
+  "license": "Apache-2.0",
   "keywords": [
     "marko",
     "markojs",
@@ -9,10 +14,6 @@
     "lasso",
     "wearegenki"
   ],
-  "repository": "https://github.com/WeAreGenki/marko-bind",
-  "homepage": "https://wearegenki.com/pro#OpenSource",
-  "author": "Max Milton <max@wearegenki.com>",
-  "license": "Apache-2.0",
   "main": "src/index.js",
   "files": [
     "src/"
@@ -20,23 +21,27 @@
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ext .js,.marko src test",
     "pretest": "yarn lint",
-    "test": "jest --config test/jest.config.js --coverage",
-    "test-ci": "yarn test --runInBand",
-    "test:watch": "yarn test --notify --watch",
-    "testpage": "node test/manual-tests/build.js && testserver ./test/manual-tests/"
+    "test": "jest",
+    "test-ci": "yarn test --coverage --runInBand --ci",
+    "test:watch": "yarn test --coverage --notify --watch",
+    "testpage": "node test/manual-tests/build.js && testserver test/manual-tests/"
   },
   "peerDependencies": {
     "marko": "^4.0.0"
   },
   "devDependencies": {
     "@lasso/marko-taglib": "1.0.10",
-    "@types/jest": "22.2.0",
-    "@wearegenki/eslint-config": "0.5.0-alpha.f1eec7f5",
+    "@wearegenki/eslint-config": "0.5.0",
+    "@wearegenki/test": "0.5.0",
     "eslint": "4.18.2",
     "express": "4.16.2",
     "jest": "22.4.2",
-    "lasso": "3.1.2",
+    "lasso": "3.1.3",
     "lasso-marko": "2.4.0",
-    "marko": "4.9.1"
+    "marko": "4.9.1",
+    "puppeteer": "^1.1.1"
+  },
+  "engines": {
+    "node": ">= 6.9.0"
   }
 }
