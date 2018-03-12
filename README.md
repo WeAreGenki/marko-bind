@@ -1,3 +1,5 @@
+<!-- markdownlint-disable first-line-h1 -->
+
 [![Build Status](https://travis-ci.org/WeAreGenki/marko-bind.svg?branch=master)](https://travis-ci.org/WeAreGenki/marko-bind)
 [![Known Vulnerabilities](https://snyk.io/test/github/WeAreGenki/marko-bind/badge.svg)](https://snyk.io/test/github/WeAreGenki/marko-bind)
 
