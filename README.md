@@ -20,7 +20,7 @@ This package tries to do as much as possible during compile time resulting in li
 
 Since Marko doesn't come with anything out-of-the-box, this marko package provides an easy way to do so. For the discussion about the feature see [github.com/marko-js/marko/issues/676](https://github.com/marko-js/marko/issues/676).
 
-The tag handling logic was very much inspired by [Vue.js's `v-model` directive](https://github.com/vuejs/vue/blob/master/src/platforms/web/compiler/directives/model.js).
+The input tag handling logic was inspired by [Vue.js's `v-model` directive](https://github.com/vuejs/vue/blob/master/src/platforms/web/compiler/directives/model.js).
 
 > NOTE: The tag and edge case handling is currently a work in progress. Most input tags already work great out of the box though!
 
