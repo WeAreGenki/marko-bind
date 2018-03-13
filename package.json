@@ -19,25 +19,27 @@
     "src/"
   ],
   "scripts": {
-    "testpage": "node test/manual-tests/build.js && testserver test/manual-tests/",
     "lint": "eslint --ignore-path .gitignore --ext .js,.marko src test",
-    "coverage": "nyc marko test",
     "pretest": "yarn lint",
-    "__test": "marko test ./test/*.test.js",
-    "test": "marko test ./test/*.test.js",
-    "posttest": "yarn coverage",
-    "test-ci": "yarn test"
+    "test": "jest",
+    "test-ci": "yarn test --coverage --runInBand --ci",
+    "test:watch": "yarn test --coverage --notify --watch",
+    "testpage": "node test/manual-tests/build.js && testserver test/manual-tests/"
   },
   "peerDependencies": {
     "marko": "^4.0.0"
   },
   "devDependencies": {
+    "@lasso/marko-taglib": "1.0.10",
     "@wearegenki/eslint-config": "0.5.0",
-    "chai": "^4.1.2",
+    "@wearegenki/test": "0.5.0",
     "eslint": "4.18.2",
+    "express": "4.16.2",
+    "jest": "22.4.2",
+    "lasso": "3.1.3",
+    "lasso-marko": "2.4.0",
     "marko": "4.9.1",
-    "marko-cli": "^2.2.2",
-    "nyc": "^11.4.1"
+    "puppeteer": "1.1.1"
   },
   "engines": {
     "node": ">= 6.9.0"

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic text input component should render correctly 1`] = `
+<!--M#s0-->
+<input value="" data-marko='{"oninput":"function bind(component, key, cb, event, el) {\\n  // module.exports = function bind(component, key, cb, event, el, ...bonus) {\\n  var selected;\\n  var value;\\n  var assignment;\\n  /* eslint-disable no-console */\\n  // FIXME: REMOVE; DEBUGGING ONLY!!\\n\\n  /*\\n  console.log('
+  \\\\n//------------------------------------------// ');\\n  console.log('RUNTIME COMP ', component);\\n  console.log('RUNTIME KEY ', key);\\n  console.log('RUNTIME CB ', cb);\\n  console.log('RUNTIME EVNT ', event);\\n  console.log('RUNTIME EL
+  ', el);\\n  console.log('RUNTIME TAG ', el.tagName);\\n  console.log('RUNTIME TYPE ', el.type);\\n  console.log('RUNTIME BONUS ', bonus);\\n  console.log('//------------------------------------------//\\\\n ');\\n  */\\n\\n  if (el.tagName === 'SELECT
+  ') {\\n    // select\\n    // XXX: el.selectedOptions would be better but isn't supported in IE\\n selected=[ ].filter.call(el.options, function (opt) {\\n return opt.selected;\\n }).map(function (opt) {\\n return opt.value;\\n });\\n value=e l.multiple ? selected : selected[0];\\n assignment=s elected[0];\\n } else if (el.type==='checkbox'
+  ) {\\n // checkbox\\n value=e l.checked;\\n } else if (el.type==='radio' ) {\\n // radio\\n // FIXME: Merge with checkbox if they
+  're the same\\n    value = el.checked;\\n  } else {\\n    // generic input and textarea\\n    value = el.value;\\n  }\\n\\n  component.setState(key, value);\\n\\n  if (assignment) {\\n    // without update() the value assignment doesn't work\\n component.update();\\n el.value=a ssignment; // eslint-disable-line no-param-reassign\\n } // run callback function (with context this=c omponent)\\n\\n\\n if (typeof cb==='function' ) cb.call(component);\\n} s0 [object Object],text, "}'><div id="result
+  "></div><!--M/s0-->
+`;

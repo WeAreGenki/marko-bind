@@ -2,10 +2,8 @@ dist/
 node_modules/
 test/coverage/
 test/manual-tests/static/
-test/snapshots/
 .cache/
-.nyc_output/
 package-lock.json*
-*.bak
 *.log
 *.marko.js
+*.bak.js
