@@ -1,10 +1,10 @@
 <!-- markdownlint-disable first-line-h1 -->
 
-[![NPM version](https://img.shields.io/npm/v/@wearegenki/marko-bind.svg)](https://www.npmjs.com/package/@wearegenki/marko-bind)
+[![NPM version](https://img.shields.io/npm/v/marko-bind.svg)](https://www.npmjs.com/package/marko-bind)
 [![Build status](https://img.shields.io/travis/WeAreGenki/marko-bind.svg)](https://travis-ci.org/WeAreGenki/marko-bind)
 [![Coverage status](https://img.shields.io/codecov/c/github/WeAreGenki/marko-bind.svg)](https://codecov.io/gh/WeAreGenki/marko-bind)
 [![Vulnerability status](https://snyk.io/test/github/WeAreGenki/marko-bind/badge.svg)](https://snyk.io/test/github/WeAreGenki/marko-bind)
-[![Licence](https://img.shields.io/npm/l/@wearegenki/marko-bind.svg)](https://github.com/WeAreGenki/marko-bind/blob/master/LICENCE)
+[![Licence](https://img.shields.io/npm/l/marko-bind.svg)](https://github.com/WeAreGenki/marko-bind/blob/master/LICENCE)
 
 # `marko-bind`
 
