@@ -32,7 +32,7 @@
   "devDependencies": {
     "@lasso/marko-taglib": "1.0.10",
     "@wearegenki/eslint-config": "0.7.0",
-    "@wearegenki/test": "0.8.0",
+    "@wearegenki/test": "0.10.0",
     "codecov": "3.0.0",
     "eslint": "4.19.1",
     "express": "4.16.3",
