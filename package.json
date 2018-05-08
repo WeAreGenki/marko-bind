@@ -33,7 +33,7 @@
     "@lasso/marko-taglib": "1.0.10",
     "@wearegenki/eslint-config": "0.12.0",
     "@wearegenki/test": "0.10.0",
-    "codecov": "3.0.1",
+    "codecov": "3.0.2",
     "eslint": "4.19.1",
     "express": "4.16.3",
     "jest": "22.4.3",
