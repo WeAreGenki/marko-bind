@@ -3538,9 +3538,9 @@ lasso-loader@^3.0.2:
     events "^1.0.2"
     raptor-util "^1.0.0"
 
-lasso-marko@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/lasso-marko/-/lasso-marko-2.4.0.tgz#9f31a8ea7fc653521d0bc2163857dc681184822d"
+lasso-marko@2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/lasso-marko/-/lasso-marko-2.4.1.tgz#44ffc95cd400a3493f341782bfe52cca75807648"
   dependencies:
     callbackify "^1.1.0"
 
