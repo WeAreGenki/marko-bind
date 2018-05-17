@@ -1,6 +1,3 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "prHourlyLimit": 99
+  "enabled": false
 }

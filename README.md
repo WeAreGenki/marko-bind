@@ -1,5 +1,9 @@
 <!-- markdownlint-disable first-line-h1 -->
 
+**WARNING: This project is no longer maintained. Marko/lasso never worked as we would have liked and so we've migrated to [Svelte](https://svelte.technology). See [`minna-ui`](https://github.com/WeAreGenki/minna-ui) for our new web UI framework.**
+
+-----
+
 [![NPM version](https://img.shields.io/npm/v/marko-bind.svg)](https://www.npmjs.com/package/marko-bind)
 [![Build status](https://img.shields.io/travis/WeAreGenki/marko-bind.svg)](https://travis-ci.org/WeAreGenki/marko-bind)
 [![Coverage status](https://img.shields.io/codecov/c/github/WeAreGenki/marko-bind.svg)](https://codecov.io/gh/WeAreGenki/marko-bind)
