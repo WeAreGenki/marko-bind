@@ -14,12 +14,12 @@
  * element which emit the event.
  */
 module.exports = function bind(component, key, cb, event, el) {
-// module.exports = function bind(component, key, cb, event, el, ...bonus) {
   var selected;
   var value;
   var assignment;
 
-  /* eslint-disable no-console */ // FIXME: REMOVE; DEBUGGING ONLY!!
+  // FIXME: REMOVE; DEBUGGING ONLY!!
+  /* eslint-disable no-console */// tslint:disable:no-console only-arrow-functions
   /*
   console.log('\n//------------------------------------------//');
   console.log('RUNTIME COMP', component);
@@ -29,7 +29,6 @@ module.exports = function bind(component, key, cb, event, el) {
   console.log('RUNTIME   EL', el);
   console.log('RUNTIME  TAG', el.tagName);
   console.log('RUNTIME TYPE', el.type);
-  console.log('RUNTIME BONUS', bonus);
   console.log('//------------------------------------------//\n');
   */
 

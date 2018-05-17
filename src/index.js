@@ -82,6 +82,7 @@ module.exports = function transform(el, context) {
   );
   const eventArgs = [
     builder.identifier('__bind'), // this is run when the event emits
+    builder.literal(false),
     builder.arrayExpression([
       builder.identifier('component'),
       builder.literal(toExpression.property.name), // state object key
@@ -89,6 +90,8 @@ module.exports = function transform(el, context) {
     ]),
   ];
   const propValue = builder.functionCall(eventMethod, eventArgs);
+
+  console.log('???? propValue', propValue);
 
   function checkBindConflicts(targetAttribute, targetEvent) {
     console.log('@@ checkBindConflict', targetAttribute, targetEvent);

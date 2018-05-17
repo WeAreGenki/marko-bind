@@ -49,11 +49,11 @@ style {
   }
 }
 
-h1 -- marko-bind tests
+<!-- h1 -- marko-bind tests
 
 h2 -- BUILD-TIME SETUP
 
-h3 -- Text input
+h3 -- Text input -->
 
 code
   pre
@@ -64,18 +64,18 @@ div.form-row
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
-h3 -- Text input with extra attributes
+<!-- h3 -- Text input with extra attributes
 
 code
   pre
     -- inputText2: ${state.inputText2}
 
 div.form-row
-  input bind('inputText2') type="text"
+  input bind('inputText2') type="text" -->
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
-h3 -- Multiple text inputs
+<!-- h3 -- Multiple text inputs
 
 code
   pre
@@ -84,11 +84,11 @@ code
 div.form-row
   input bind('inputText3') type="text"
   input bind('inputText3') type="text" value="existing values should be discarded"
-  input bind('inputText3') type="text"
+  input bind('inputText3') type="text" -->
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
-h3 -- Select without default
+<!-- h3 -- Select without default
 
 code
   pre
@@ -99,11 +99,11 @@ div.form-row
     option id="opt1" -- opt1
     option id="opt2" -- opt2
     option id="opt3" -- opt3
-    option id="opt4" -- opt4
+    option id="opt4" -- opt4 -->
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
-h3 -- Select with existing state
+<!-- h3 -- Select with existing state
 
 code
   pre
@@ -114,11 +114,11 @@ div.form-row
     option id="opt1" -- opt1
     option id="opt2" -- opt2
     option id="opt3" -- opt3
-    option id="opt4" -- opt4
+    option id="opt4" -- opt4 -->
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
-h3 -- Multiple selects
+<!-- h3 -- Multiple selects
 
 code
   pre
@@ -143,10 +143,11 @@ div.form-row
     option id="opt1" -- opt1
     option id="opt2" -- opt2
     option id="opt3" -- opt3
-    option id="opt4" -- opt4
+    option id="opt4" -- opt4 -->
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
+<!--
 h2 -- RUNTIME SETUP
 
 h3 -- Dynamic expression text input
@@ -160,3 +161,4 @@ div.form-row
   input bind(component.dynamicExpression()) type="text"
   input bind(component.dynamicExpression()) type="text"
   input bind(component.dynamicExpression()) type="text"
+-->
